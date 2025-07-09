@@ -5,9 +5,10 @@ body {
   background-color: #0a0a0a;
   color: #ffffff;
   text-align: center;
+  overflow-x: hidden;
 }
 
-/* Navbar Styles - Enhanced Dark Theme */
+/* Navbar Styles - Fixed Dark Theme Hover */
 .navbar-container {
   display: flex;
   justify-content: center;
@@ -17,6 +18,9 @@ body {
   font-size: small;
   backdrop-filter: blur(20px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .navbar-nav {
@@ -37,29 +41,31 @@ nav ul li a {
   color: #ffffff;
   transition: all 0.3s ease;
   position: relative;
-  padding: 5px 10px;
+  padding: 8px 16px;
   border-radius: 8px;
+  background: transparent;
 }
 
 nav ul li a::before {
   content: "";
   position: absolute;
-  bottom: -5px;
+  bottom: -2px;
   left: 50%;
   width: 0;
   height: 2px;
-  background: linear-gradient(135deg, #007aff, #5856d6);
+  background: linear-gradient(135deg, #64ffda, #00bcd4);
   transition: all 0.3s ease;
   transform: translateX(-50%);
 }
 
 nav ul li a:hover {
-  color: #007aff;
-  background: rgba(0, 122, 255, 0.1);
+  color: #64ffda;
+  background: rgba(100, 255, 218, 0.1);
+  transform: translateY(-2px);
 }
 
 nav ul li a:hover::before {
-  width: 100%;
+  width: 80%;
 }
 
 .navbar-logo {
@@ -71,12 +77,13 @@ nav ul li a:hover::before {
 /* Hero Section - Enhanced Dark Theme */
 .hero {
   background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #2d2d2d 100%);
-  min-height: 80vh;
+  min-height: 85vh;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
   overflow: hidden;
+  padding: 20px;
 }
 
 .hero::before {
@@ -87,9 +94,9 @@ nav ul li a:hover::before {
   right: 0;
   bottom: 0;
   background: 
-    radial-gradient(circle at 20% 30%, rgba(0, 122, 255, 0.15) 0%, transparent 50%),
-    radial-gradient(circle at 80% 70%, rgba(255, 45, 85, 0.15) 0%, transparent 50%),
-    radial-gradient(circle at 50% 50%, rgba(88, 86, 214, 0.1) 0%, transparent 50%);
+    radial-gradient(circle at 20% 30%, rgba(100, 255, 218, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(255, 107, 107, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(138, 43, 226, 0.08) 0%, transparent 50%);
   animation: heroGradient 10s ease-in-out infinite alternate;
 }
 
@@ -112,6 +119,8 @@ nav ul li a:hover::before {
   position: relative;
   z-index: 2;
   animation: fadeInUp 1s ease-out;
+  max-width: 800px;
+  width: 100%;
 }
 
 @keyframes fadeInUp {
@@ -147,18 +156,18 @@ nav ul li a:hover::before {
 
 .hero-image:hover {
   transform: scale(1.05);
-  box-shadow: 0 25px 80px rgba(0, 122, 255, 0.3);
+  box-shadow: 0 25px 80px rgba(100, 255, 218, 0.3);
 }
 
 .hero-heading {
   font-size: 28px;
   font-weight: 600;
-  background: linear-gradient(135deg, #007aff, #5856d6, #ff2d55);
+  background: linear-gradient(135deg, #64ffda, #00bcd4, #8a2be2);
   color: white;
   border-radius: 25px;
   padding: 15px 30px;
   margin: 30px 0 20px 0;
-  box-shadow: 0 10px 30px rgba(0, 122, 255, 0.4);
+  box-shadow: 0 10px 30px rgba(100, 255, 218, 0.3);
   animation: pulse 2s ease-in-out infinite;
   transition: transform 0.3s ease;
   position: relative;
@@ -167,10 +176,10 @@ nav ul li a:hover::before {
 
 @keyframes pulse {
   0%, 100% {
-    box-shadow: 0 10px 30px rgba(0, 122, 255, 0.4);
+    box-shadow: 0 10px 30px rgba(100, 255, 218, 0.3);
   }
   50% {
-    box-shadow: 0 15px 40px rgba(0, 122, 255, 0.6);
+    box-shadow: 0 15px 40px rgba(100, 255, 218, 0.5);
   }
 }
 
@@ -183,20 +192,20 @@ nav ul li a:hover::before {
   transform: translateY(-5px);
 }
 
-/* Enhanced Button Styles */
+/* Enhanced Button Styles - Better Colors and Hover */
 .hero-btn {
   font-size: 18px;
   padding: 18px 40px;
   border-radius: 30px;
   border: none;
   font-weight: 600;
-  background: linear-gradient(135deg, #007aff, #5856d6, #ff2d55);
-  color: white;
+  background: linear-gradient(135deg, #64ffda, #00bcd4);
+  color: #1a1a1a;
   cursor: pointer;
   transition: all 0.4s ease;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 8px 25px rgba(0, 122, 255, 0.3);
+  box-shadow: 0 8px 25px rgba(100, 255, 218, 0.3);
   text-transform: uppercase;
   letter-spacing: 1px;
 }
@@ -208,7 +217,7 @@ nav ul li a:hover::before {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
   transition: left 0.6s ease;
 }
 
@@ -218,8 +227,9 @@ nav ul li a:hover::before {
 
 .hero-btn:hover {
   transform: translateY(-5px) scale(1.05);
-  box-shadow: 0 15px 40px rgba(0, 122, 255, 0.5);
-  background: linear-gradient(135deg, #0056b3, #4a47a3, #cc1d42);
+  box-shadow: 0 15px 40px rgba(100, 255, 218, 0.5);
+  background: linear-gradient(135deg, #4dd0e1, #0097a7);
+  color: #ffffff;
 }
 
 .hero-btn:active {
@@ -237,6 +247,7 @@ nav ul li a:hover::before {
   margin-top: 50px;
   position: relative;
   overflow: hidden;
+  padding: 20px;
 }
 
 .black-iphone {
@@ -247,6 +258,8 @@ nav ul li a:hover::before {
   padding: 60px 20px;
   position: relative;
   z-index: 2;
+  max-width: 800px;
+  width: 100%;
 }
 
 .iphone-heading {
@@ -264,8 +277,8 @@ nav ul li a:hover::before {
 
 .iphone-heading-link:hover {
   text-decoration: none;
-  color: #007aff;
-  text-shadow: 0 0 20px rgba(0, 122, 255, 0.5);
+  color: #64ffda;
+  text-shadow: 0 0 20px rgba(100, 255, 218, 0.5);
 }
 
 .iphone-heading-2 {
@@ -284,8 +297,8 @@ nav ul li a:hover::before {
 
 .iphone-heading-link-2:hover {
   text-decoration: none;
-  color: #ff2d55;
-  text-shadow: 0 0 20px rgba(255, 45, 85, 0.5);
+  color: #ff6b6b;
+  text-shadow: 0 0 20px rgba(255, 107, 107, 0.5);
 }
 
 .black-iphone-btn {
@@ -295,13 +308,13 @@ nav ul li a:hover::before {
   border-radius: 30px;
   border: none;
   font-weight: 600;
-  background: linear-gradient(135deg, #007aff, #5856d6, #ff2d55);
-  color: #ffffff;
+  background: linear-gradient(135deg, #64ffda, #00bcd4);
+  color: #1a1a1a;
   cursor: pointer;
   transition: all 0.4s ease;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 8px 25px rgba(0, 122, 255, 0.4);
+  box-shadow: 0 8px 25px rgba(100, 255, 218, 0.3);
   text-transform: uppercase;
   letter-spacing: 1px;
 }
@@ -322,9 +335,10 @@ nav ul li a:hover::before {
 }
 
 .black-iphone-btn:hover {
-  background: linear-gradient(135deg, #0056b3, #4a47a3, #cc1d42);
+  background: linear-gradient(135deg, #4dd0e1, #0097a7);
   transform: translateY(-5px) scale(1.05);
-  box-shadow: 0 15px 40px rgba(0, 122, 255, 0.6);
+  box-shadow: 0 15px 40px rgba(100, 255, 218, 0.5);
+  color: #ffffff;
 }
 
 /* Product Sections - Enhanced */
@@ -337,6 +351,7 @@ nav ul li a:hover::before {
   background-position: center;
   position: relative;
   margin: 20px 0;
+  padding: 40px 20px;
 }
 
 .product-overlay {
@@ -380,20 +395,20 @@ nav ul li a:hover::before {
 }
 
 .product-link {
-  color: #ffffff;
+  color: #1a1a1a;
   text-decoration: none;
-  background: linear-gradient(135deg, #007aff, #5856d6);
+  background: linear-gradient(135deg, #64ffda, #00bcd4);
   padding: 15px 30px;
   border-radius: 25px;
   font-weight: 600;
   transition: all 0.4s ease;
   backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(100, 255, 218, 0.3);
   position: relative;
   overflow: hidden;
   text-transform: uppercase;
   letter-spacing: 1px;
-  box-shadow: 0 8px 25px rgba(0, 122, 255, 0.3);
+  box-shadow: 0 8px 25px rgba(100, 255, 218, 0.3);
 }
 
 .product-link::before {
@@ -412,12 +427,13 @@ nav ul li a:hover::before {
 }
 
 .product-link:hover {
-  background: linear-gradient(135deg, #0056b3, #4a47a3);
+  background: linear-gradient(135deg, #4dd0e1, #0097a7);
   transform: translateY(-5px) scale(1.05);
-  box-shadow: 0 15px 40px rgba(0, 122, 255, 0.5);
+  box-shadow: 0 15px 40px rgba(100, 255, 218, 0.5);
+  color: #ffffff;
 }
 
-/* Grid Section - Enhanced Dark Theme */
+/* Grid Section - Enhanced Dark Theme with Fixed Images */
 .grid-section {
   padding: 80px 20px;
   background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #2d2d2d 100%);
@@ -432,8 +448,8 @@ nav ul li a:hover::before {
   right: 0;
   bottom: 0;
   background: 
-    radial-gradient(circle at 25% 25%, rgba(0, 122, 255, 0.05) 0%, transparent 50%),
-    radial-gradient(circle at 75% 75%, rgba(255, 45, 85, 0.05) 0%, transparent 50%);
+    radial-gradient(circle at 25% 25%, rgba(100, 255, 218, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(255, 107, 107, 0.05) 0%, transparent 50%);
   animation: gridGradient 15s ease-in-out infinite alternate;
 }
 
@@ -464,6 +480,8 @@ nav ul li a:hover::before {
   padding: 0;
   animation: cardFloat 8s ease-in-out infinite;
   border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
 }
 
 @keyframes cardFloat {
@@ -478,16 +496,17 @@ nav ul li a:hover::before {
 
 .grid-item:hover {
   transform: translateY(-15px) scale(1.03);
-  box-shadow: 0 20px 60px rgba(0, 122, 255, 0.4);
-  border-color: rgba(0, 122, 255, 0.6);
+  box-shadow: 0 20px 60px rgba(100, 255, 218, 0.3);
+  border-color: rgba(100, 255, 218, 0.6);
 }
 
 .grid-item-image {
   width: 100%;
   height: 250px;
   object-fit: cover;
-  border-radius: 20px 20px 0 0;
+  object-position: center;
   transition: transform 0.3s ease;
+  flex-shrink: 0;
 }
 
 .grid-item:hover .grid-item-image {
@@ -496,6 +515,10 @@ nav ul li a:hover::before {
 
 .grid-item-content {
   padding: 30px 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .grid-item h3 {
@@ -511,23 +534,26 @@ nav ul li a:hover::before {
   color: #b0b0b0;
   margin-bottom: 25px;
   line-height: 1.6;
+  flex-grow: 1;
 }
 
 .grid-item a {
-  color: #ffffff;
+  color: #1a1a1a;
   text-decoration: none;
   font-weight: 600;
   padding: 15px 30px;
   border-radius: 25px;
   transition: all 0.4s ease;
   display: inline-block;
-  background: linear-gradient(135deg, #007aff, #5856d6);
-  border: 1px solid rgba(0, 122, 255, 0.3);
+  background: linear-gradient(135deg, #64ffda, #00bcd4);
+  border: 1px solid rgba(100, 255, 218, 0.3);
   position: relative;
   overflow: hidden;
   text-transform: uppercase;
   letter-spacing: 1px;
-  box-shadow: 0 8px 25px rgba(0, 122, 255, 0.3);
+  box-shadow: 0 8px 25px rgba(100, 255, 218, 0.3);
+  margin-top: auto;
+  align-self: center;
 }
 
 .grid-item a::before {
@@ -546,12 +572,13 @@ nav ul li a:hover::before {
 }
 
 .grid-item a:hover {
-  background: linear-gradient(135deg, #0056b3, #4a47a3);
+  background: linear-gradient(135deg, #4dd0e1, #0097a7);
   transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 12px 30px rgba(0, 122, 255, 0.5);
+  box-shadow: 0 12px 30px rgba(100, 255, 218, 0.5);
+  color: #ffffff;
 }
 
-/* Footer - Fixed spacing and enhanced dark theme */
+/* Footer - Enhanced dark theme */
 .footer {
   background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
   color: #ffffff;
@@ -601,7 +628,7 @@ nav ul li a:hover::before {
 }
 
 .footer-section ul li a:hover {
-  color: #007aff;
+  color: #64ffda;
   padding-left: 5px;
 }
 
@@ -635,10 +662,10 @@ nav ul li a:hover::before {
 }
 
 .footer-bottom-links a:hover {
-  color: #007aff;
+  color: #64ffda;
 }
 
-/* Enhanced Responsive Design */
+/* Enhanced Mobile Responsive Design */
 @media (max-width: 1024px) {
   .grid-container {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -649,6 +676,14 @@ nav ul li a:hover::before {
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 30px;
   }
+  
+  .hero {
+    min-height: 75vh;
+  }
+  
+  .iphone-rgb {
+    min-height: 70vh;
+  }
 }
 
 @media (max-width: 768px) {
@@ -657,22 +692,48 @@ nav ul li a:hover::before {
   }
 
   nav ul {
-    gap: 1.5rem;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   nav ul li a {
-    font-size: 12px;
-    padding: 8px 12px;
+    font-size: 13px;
+    padding: 6px 12px;
+  }
+
+  .hero {
+    min-height: 70vh;
+    padding: 40px 15px;
+  }
+
+  .hero-image {
+    max-width: 85%;
   }
 
   .hero-heading {
-    font-size: 24px;
+    font-size: 22px;
     padding: 12px 24px;
+    margin: 25px 0 15px 0;
   }
 
   .hero-btn, .black-iphone-btn {
     font-size: 16px;
     padding: 15px 30px;
+  }
+
+  .iphone-rgb {
+    min-height: 65vh;
+    margin-top: 30px;
+  }
+
+  .black-iphone {
+    padding: 40px 15px;
+  }
+
+  .product-section {
+    min-height: 60vh;
+    padding: 30px 15px;
   }
 
   .product-links {
@@ -689,10 +750,19 @@ nav ul li a:hover::before {
   .grid-container {
     grid-template-columns: 1fr;
     gap: 20px;
+    padding: 0 15px;
   }
 
   .grid-item {
     min-height: 400px;
+  }
+
+  .grid-item-image {
+    height: 200px;
+  }
+
+  .grid-item-content {
+    padding: 25px 15px;
   }
 
   .footer-sections {
@@ -711,9 +781,34 @@ nav ul li a:hover::before {
   }
 }
 
+@media (max-width: 600px) {
+  nav ul {
+    gap: 0.5rem;
+  }
+
+  nav ul li a {
+    font-size: 12px;
+    padding: 5px 10px;
+  }
+
+  .hero-heading {
+    font-size: 20px;
+    padding: 10px 20px;
+  }
+
+  .product-title {
+    font-size: clamp(28px, 7vw, 50px);
+  }
+
+  .product-subtitle {
+    font-size: clamp(14px, 3.5vw, 20px);
+  }
+}
+
 @media (max-width: 480px) {
   .hero {
-    min-height: 70vh;
+    min-height: 65vh;
+    padding: 30px 10px;
   }
 
   .hero-image {
@@ -725,9 +820,31 @@ nav ul li a:hover::before {
     padding: 12px 24px;
   }
 
+  .iphone-rgb {
+    min-height: 60vh;
+  }
+
+  .black-iphone {
+    padding: 30px 10px;
+  }
+
+  .product-section {
+    min-height: 55vh;
+    padding: 20px 10px;
+  }
+
   .product-link {
     width: 90%;
     padding: 12px 20px;
+    font-size: 14px;
+  }
+
+  .grid-item {
+    min-height: 380px;
+  }
+
+  .grid-item-image {
+    height: 180px;
   }
 
   .grid-item-content {
@@ -738,6 +855,15 @@ nav ul li a:hover::before {
     font-size: 24px;
   }
 
+  .grid-item p {
+    font-size: 14px;
+  }
+
+  .grid-item a {
+    font-size: 12px;
+    padding: 12px 24px;
+  }
+
   .footer-sections {
     grid-template-columns: 1fr;
     gap: 20px;
@@ -746,6 +872,48 @@ nav ul li a:hover::before {
   .footer-bottom-links {
     flex-direction: column;
     gap: 15px;
+  }
+
+  .footer-section h4 {
+    font-size: 13px;
+  }
+
+  .footer-section ul li a {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 360px) {
+  .navbar-container {
+    padding: 0 10px;
+  }
+
+  nav ul {
+    gap: 0.3rem;
+  }
+
+  nav ul li a {
+    font-size: 11px;
+    padding: 4px 8px;
+  }
+
+  .hero-heading {
+    font-size: 18px;
+    padding: 8px 16px;
+  }
+
+  .hero-btn, .black-iphone-btn {
+    font-size: 13px;
+    padding: 10px 20px;
+  }
+
+  .product-link {
+    padding: 10px 16px;
+    font-size: 13px;
+  }
+
+  .grid-item-content {
+    padding: 15px 10px;
   }
 }
 
@@ -759,21 +927,47 @@ nav ul li a:hover::before {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(135deg, #007aff, #5856d6);
+  background: linear-gradient(135deg, #64ffda, #00bcd4);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(135deg, #0056b3, #4a47a3);
+  background: linear-gradient(135deg, #4dd0e1, #0097a7);
 }
 
 /* Selection color for dark theme */
 ::selection {
-  background: rgba(0, 122, 255, 0.3);
+  background: rgba(100, 255, 218, 0.3);
   color: #ffffff;
 }
 
 ::-moz-selection {
-  background: rgba(0, 122, 255, 0.3);
+  background: rgba(100, 255, 218, 0.3);
   color: #ffffff;
+}
+
+/* Additional utility classes for better mobile experience */
+.mobile-hidden {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .mobile-hidden {
+    display: none;
+  }
+}
+
+.mobile-only {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobile-only {
+    display: block;
+  }
+}
+
+/* Smooth scrolling for better UX */
+html {
+  scroll-behavior: smooth;
 }
