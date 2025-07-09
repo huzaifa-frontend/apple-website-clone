@@ -93,10 +93,21 @@ nav ul li a:hover::before {
   left: 0;
   right: 0;
   bottom: 0;
-  background: 
-    radial-gradient(circle at 20% 30%, rgba(100, 255, 218, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 80% 70%, rgba(255, 107, 107, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 50% 50%, rgba(138, 43, 226, 0.08) 0%, transparent 50%);
+  background: radial-gradient(
+      circle at 20% 30%,
+      rgba(100, 255, 218, 0.1) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 80% 70%,
+      rgba(255, 107, 107, 0.1) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(138, 43, 226, 0.08) 0%,
+      transparent 50%
+    );
   animation: heroGradient 10s ease-in-out infinite alternate;
 }
 
@@ -146,7 +157,8 @@ nav ul li a:hover::before {
 }
 
 @keyframes floatImage {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0px) scale(1);
   }
   50% {
@@ -175,7 +187,8 @@ nav ul li a:hover::before {
 }
 
 @keyframes pulse {
-  0%, 100% {
+  0%,
+  100% {
     box-shadow: 0 10px 30px rgba(100, 255, 218, 0.3);
   }
   50% {
@@ -217,7 +230,12 @@ nav ul li a:hover::before {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
   transition: left 0.6s ease;
 }
 
@@ -238,8 +256,8 @@ nav ul li a:hover::before {
 
 /* Apple Event Section - Enhanced */
 .iphone-rgb {
-  background: linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), 
-              url("assets/apple_rainbow.jpg") no-repeat center center/cover;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)),
+    url("assets/apple_rainbow.jpg") no-repeat center center/cover;
   min-height: 80vh;
   display: flex;
   align-items: center;
@@ -326,7 +344,12 @@ nav ul li a:hover::before {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
   transition: left 0.6s ease;
 }
 
@@ -418,7 +441,12 @@ nav ul li a:hover::before {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
   transition: left 0.6s ease;
 }
 
@@ -447,15 +475,26 @@ nav ul li a:hover::before {
   left: 0;
   right: 0;
   bottom: 0;
-  background: 
-    radial-gradient(circle at 25% 25%, rgba(100, 255, 218, 0.05) 0%, transparent 50%),
-    radial-gradient(circle at 75% 75%, rgba(255, 107, 107, 0.05) 0%, transparent 50%);
+  background: radial-gradient(
+      circle at 25% 25%,
+      rgba(100, 255, 218, 0.05) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 75% 75%,
+      rgba(255, 107, 107, 0.05) 0%,
+      transparent 50%
+    );
   animation: gridGradient 15s ease-in-out infinite alternate;
 }
 
 @keyframes gridGradient {
-  0% { opacity: 0.5; }
-  100% { opacity: 1; }
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .grid-container {
@@ -485,14 +524,27 @@ nav ul li a:hover::before {
 }
 
 @keyframes cardFloat {
-  0%, 100% { transform: translateY(0px); }
-  33% { transform: translateY(-8px); }
-  66% { transform: translateY(4px); }
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  33% {
+    transform: translateY(-8px);
+  }
+  66% {
+    transform: translateY(4px);
+  }
 }
 
-.grid-item:nth-child(2) { animation-delay: -2s; }
-.grid-item:nth-child(3) { animation-delay: -4s; }
-.grid-item:nth-child(4) { animation-delay: -6s; }
+.grid-item:nth-child(2) {
+  animation-delay: -2s;
+}
+.grid-item:nth-child(3) {
+  animation-delay: -4s;
+}
+.grid-item:nth-child(4) {
+  animation-delay: -6s;
+}
 
 .grid-item:hover {
   transform: translateY(-15px) scale(1.03);
@@ -563,7 +615,12 @@ nav ul li a:hover::before {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
   transition: left 0.6s ease;
 }
 
@@ -671,16 +728,16 @@ nav ul li a:hover::before {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 25px;
   }
-  
+
   .footer-sections {
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 30px;
   }
-  
+
   .hero {
     min-height: 75vh;
   }
-  
+
   .iphone-rgb {
     min-height: 70vh;
   }
@@ -717,7 +774,8 @@ nav ul li a:hover::before {
     margin: 25px 0 15px 0;
   }
 
-  .hero-btn, .black-iphone-btn {
+  .hero-btn,
+  .black-iphone-btn {
     font-size: 16px;
     padding: 15px 30px;
   }
@@ -815,7 +873,8 @@ nav ul li a:hover::before {
     max-width: 90%;
   }
 
-  .hero-btn, .black-iphone-btn {
+  .hero-btn,
+  .black-iphone-btn {
     font-size: 14px;
     padding: 12px 24px;
   }
@@ -902,7 +961,8 @@ nav ul li a:hover::before {
     padding: 8px 16px;
   }
 
-  .hero-btn, .black-iphone-btn {
+  .hero-btn,
+  .black-iphone-btn {
     font-size: 13px;
     padding: 10px 20px;
   }
